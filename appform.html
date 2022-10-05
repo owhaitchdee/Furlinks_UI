@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head> 	
+    <title>Furlinks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b63f0cdae2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.4/vue.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css"></script>
+    
+  </head>
+<style>
+</style>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left: 5%; padding-right: 5%;padding-top:0px;padding-bottom:0px">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="index.html" style="color:#811D60"><img src="images/fllogo.png" width="35px" style="padding-right:10px;vertical-align:middle"></img>Furlinks</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Rescue</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Adoption</a>
+              </li>
+            </ul>
+    </div>
+    <div>
+        <span style="float:right; padding-right: 2%;font-size: small"></span>
+        <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="images/avatar.jpg" width="40" height="40" class="rounded-circle">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="font-size:14px">
+              <a class="dropdown-item" href="#">Profile </a>
+              <a class="dropdown-item" href="#">Settings</a>
+              <a class="dropdown-item" href="#">Log Out</a>
+            </div>
+          </li>   
+        </ul>
+      </div>
+    <!--
+    <div>
+                <span style="padding:5px"></span>
+                <button class="btn btn-primary my-2 my-sm-0" type="button">Log In</button>
+                <span style="padding:5px"></span>
+                <button class="btn btn btn-outline-primary my-2 my-sm-0 login-btn" type="button">Sign Up</button>
+    </div>-->
+  </nav>
+
+  <hr style="margin:0px 0px 5px 0px;padding:0px 0px 20px 0px;border-color:#ececec">
+
+<div class="container-fluid d-flex justify-content-center" style="padding-left: 5%; padding-right: 5%;padding-bottom: 20px;">
+    <div class="row" style="width:100%">
+        <div class="col-lg-8 col-sm-12" style="padding-left:10px;padding-right: 10px;">
+            <h5><strong>Adoption Application Form</strong><br></h5>
+            <div class="container" style="margin-top:20px;margin-bottom:10px">
+            <p style="font-size:14px;color:#5d5d5d"> Please answer the following questions carefully. Some of the questions are designed to help you reflect your decision to adopt a dog. We try to ensure the best possible match between a dog and adopter. Remember that this is a lifetime commitment.<br><br>
+                Taking care of dogs require full responsibility and financial capacity. Hence, rescuers and posters prefer not to adopt dogs to minors. An adult must fill up this form and sign the adoption agreement.</p>
+            </div>
+    <!-- MultiStep Form -->
+            <form id="msform" action="" method="POST">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active" id="account"><strong>Applicant</strong></li>
+                    <li id="personal"><strong>Pet History</strong></li>
+                    <li id="payment"><strong>Adoption</strong></li>
+                    <li id="consent"><strong>Consent</strong></li>
+                    <li id="confirm"><strong>Finish</strong></li>
+                </ul>
+                <!-- fieldsets -->
+                <fieldset>
+                    <div class="form-card" style="padding-right: 10px;">
+                        <h5 style="font-size:16px;font-weight: 700;padding-bottom:10px">1. Applicant Information</h5>
+                        <div class="row mb-sm-1" style="padding-left: 20px">
+                            <label for="firstname" class="col-sm-2 col-form-label col-form-label-sm">First Name</label>
+                            <div class="col-sm-4"> 
+                                <input type="text" class="form-control form-control-sm" name="firstname" aria-label="firstname" required>
+                            </div>
+                            <label for="lastname" class="col-sm-2 col-form-label col-form-label-sm">Last Name</label>
+                            <div class="col-sm-4"> 
+                                <input type="text" class="form-control form-control-sm" name="lastname" aria-label="lastname" required>
+                            </div>
+                        </div>
+                        <div class="row mb-sm-1"  style="padding-left: 20px">
+                            <label for="email" class="col-sm-2 col-form-label col-form-label-sm">Email</label>
+                            <div class="col-sm-4">
+                                <input type="email" class="form-control form-control-sm" name="email" id="email" value="marie@yahoo.com" required>
+                            </div>
+                            <label for="mobileno" class="col-sm-2 col-form-label col-form-label-sm">Mobile No.</label>
+                            <div class="col-sm-4"> 
+                                <input type="tel" class="form-control form-control-sm" name="mobileno" aria-label="mobileno" required>
+                            </div>
+                        </div>
+                        <div class="row mb-sm-1"  style="padding-left: 20px">
+                            <label for="address1" class="col-sm-2 col-form-label col-form-label-sm">Address</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control form-control-sm" id="address1" required>
+                            </div>
+                        </div>
+                        <div class="row mb-sm-1"  style="padding-left: 20px">
+                            <label for="brgy" class="col-sm-2 col-form-label col-form-label-sm">Barangay</label>
+                            <div class="col-sm-5"> 
+                                <input type="text" class="form-control form-control-sm" aria-label="brgy" required>
+                            </div>
+                            <label for="city" class="col-sm-1 col-form-label col-form-label-sm">City</label>
+                            <div class="col-sm-4"> 
+                                <input type="text" class="form-control form-control-sm" aria-label="city" required>
+                            </div>
+                        </div>
+                        <div class="row mb-sm-1"  style="padding-left: 20px">
+                            <label for="hometype" class="col-sm-2 col-form-label col-form-label-sm">Home Type</label>
+                            <div class="col-sm-5 col-form-label col-form-label-sm">
+                            <div class="form-check form-check-inline" style="padding-left:5px">
+                                <input class="form-check-input" type="radio" name="hometype" id="hometype" value="option1"  required>
+                                <label class="form-check-label" for="hometype">Home</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="hometype" id="hometype" value="option2" required>
+                                <label class="form-check-label" for="hometype">Condo</label>
+                            </div>
+                            <span style="padding-left: 20px;"></span>
+                            <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="owned" id="owned" value="option1" required>
+                                    <label class="form-check-label" for="owned">Own</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="owned" id="owned" value="option2" required>
+                                    <label class="form-check-label" for="owned">Rented</label>
+                                </div>
+                            </div>
+                            <div class="col-sm-5 col-form-label col-form-label-sm"> If rented, are you allowed to have dogs?
+                                <div class="form-check form-check-inline" style="padding-left:20px">
+                                <input class="form-check-input" type="checkbox" name="allowed" id="allowed" value="Yes">
+                                <label class="form-check-label" for="allowed">Yes</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-sm-1" style="padding-left: 20px";>
+                            <label for="income" class="col-sm-2 col-form-label col-form-label-sm">Source of Funds</label>
+                            <div class="col-sm-4"> 
+                                <select class="list-dt form-control form-control-sm" id="income" aria-label="income" style="margin-bottom: 10px;"  required>
+                                    <option selected>Select</option>
+                                    <option value="1">Employment</option>
+                                    <option value="2">Business</option>
+                                    <option value="3">Freelance</option>
+                                    <option value="4">Savings</option>
+                                    <option value="5">Others</option>
+                                    </select>                
+                            </div>
+                            <label for="work" class="col-sm-2 col-form-label col-form-label-sm">Occupation/Business</label>
+                            <div class="col-sm-4"> 
+                                <input type="text" class="form-control form-control-sm" aria-label="work">
+                                </div>
+                            </div>
+                    </div>
+                    <input type="submit" name="next" class="next action-button" value="Next Step"/>
+                </fieldset>
+    <!-- PET HISTORY -->                            
+                <fieldset>
+                    <div class="form-card" style="padding-right: 10px;">
+                        <h5 style="font-size:16px;font-weight: 700;padding-bottom:10px">2. Pet History</h5>
+
+                        <div class="row mb-sm-1" style="padding-left: 20px;vertical-align:bottom">
+                            <div class="col-sm-6 col-form-label col-form-label-sm"> Do you currently have pets? 
+                                <div class="form-check form-check-inline" style="padding-left:30px">
+                                    <input class="form-check-input" type="radio" name="owner" id="owner" value="option1">
+                                    <label class="form-check-label" for="owner">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="owner" id="owner" value="option2">
+                                    <label class="form-check-label" for="owner">No</label>            
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-form-label col-form-label-sm" style="margin:0%;padding-left:15px;padding-top:0%;padding-bottom: 0%;">
+                                If yes, how many?
+                                <div class="form-check form-check-inline" style="padding-left:5px">
+                                    <input type="text" class="form-control form-control-xs" aria-label="petcount" style="width:50px;height:25px;">                        
+                                </div>
+                                <span style="padding-left:10px"></span>
+                                <label for="pettype"> Pets </label>
+                                <div class="form-check form-check-inline" style="padding-left:5px">
+                                    <select class="list-dt form-control form-control-sm" id="pettype" aria-label="pettype" style="width:120px;height:25px;padding-top:2px">
+                                        <option selected>Select</option>
+                                        <option value="1">Dogs</option>
+                                        <option value="2">Cats</option>
+                                        <option value="3">Dogs & Cats</option>
+                                        <option value="4">Others</option>
+                                    </select>                
+                            </div>
+                            </div>
+                            </div>
+                        <div class="row mb-sm-1" style="padding-left: 20px">
+                            <div class="col-sm-9 col-form-label col-form-label-sm"> Does any member of your household have any known allergies to animals?  
+                                    <div class="form-check form-check-inline" style="float:right">
+                                        <input class="form-check-input" type="radio" name="ph1" id="ph1" value="option1">
+                                        <label class="form-check-label" for="ph1">Yes</label>
+                                        <span style="padding-left:20px"></span>
+                                        <input class="form-check-input" type="radio" name="ph1" id="ph1" value="option2">
+                                        <label class="form-check-label" for="ph1">No</label>            
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-sm-1" style="padding-left: 20px">
+                            <div class="col-sm-9 col-form-label col-form-label-sm">If you have children, have they been taught how to behave with animals? 
+                                    <div class="form-check form-check-inline" style="float:right">
+                                        <input class="form-check-input" type="radio" name="ph2" id="ph2" value="option1">
+                                        <label class="form-check-label" for="ph2">Yes</label>
+                                        <span style="padding-left:20px"></span>
+                                        <input class="form-check-input" type="radio" name="ph2" id="ph2" value="option2">
+                                        <label class="form-check-label" for="ph2">No</label>            
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row mb-sm-1" style="padding-left: 20px">
+                            <div class="col-sm-9 col-form-label col-form-label-sm">If you have other pets, have they all been vaccinated?  
+                                    <div class="form-check form-check-inline" style="float:right">
+                                        <input class="form-check-input" type="radio" name="ph3" id="ph3" value="option1">
+                                        <label class="form-check-label" for="ph3">Yes</label>
+                                        <span style="padding-left:20px"></span>
+                                        <input class="form-check-input" type="radio" name="ph3" id="ph3" value="option2">
+                                        <label class="form-check-label" for="ph3">No</label>            
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row mb-sm-1" style="padding-left: 20px">
+                            <div class="col-sm-9 col-form-label col-form-label-sm">If you have other pets, are they all spayed/neutered?  
+                                    <div class="form-check form-check-inline" style="float:right">
+                                        <input class="form-check-input" type="radio" name="ph4" id="ph4" value="option1">
+                                        <label class="form-check-label" for="ph4">Yes</label>
+                                        <span style="padding-left:20px"></span>
+                                        <input class="form-check-input" type="radio" name="ph4" id="ph4" value="option2">
+                                        <label class="form-check-label" for="ph4">No</label>            
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row mb-sm-1" style="padding-left: 20px">
+                            <div class="col-sm-9 col-form-label col-form-label-sm">Have you ever had a pet euthanized? 
+                                    <div class="form-check form-check-inline" style="float:right">
+                                        <input class="form-check-input" type="radio" name="ph5" id="ph5" value="option1">
+                                        <label class="form-check-label" for="ph5">Yes</label>
+                                        <span style="padding-left:20px;"></span>
+                                        <input class="form-check-input" type="radio" name="ph5" id="ph5" value="option2">
+                                        <label class="form-check-label" for="ph5">No</label>            
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row mb-sm-1" style="padding-left: 20px">
+                            <div class="col-sm-9 col-form-label col-form-label-sm">Have you ever lost a pet?
+                                    <div class="form-check form-check-inline" style="float:right">
+                                        <input class="form-check-input" type="radio" name="ph6" id="ph6" value="option1">
+                                        <label class="form-check-label" for="ph6">Yes</label>
+                                        <span style="padding-left:20px;"></span>
+                                        <input class="form-check-input" type="radio" name="ph6" id="ph6" value="option2">
+                                        <label class="form-check-label" for="ph6">No</label>            
+                                    </div>
+                            </div>
+                        </div>
+
+                    </div>        
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                    <input type="button" name="next" class="next action-button" value="Next Step"/>
+                </fieldset>
+    <!-- ADOPTION -->                            
+                <fieldset>
+                    <div class="form-card" style="padding-right: 20px;">
+                        <h5 style="font-size:16px;font-weight: 700;padding-bottom:10px">3. Adoption-specific Questions</h5>
+                        <div class="row mb-sm-1" style="padding-left: 20px">
+                            <div class="col-sm-12 col-form-label col-form-label-sm">Do all members of the family support your decision to adopt a dog?   
+                                    <div class="form-check form-check-inline" style="padding-left:30px">
+                                        <input class="form-check-input" type="radio" name="support" id="support" value="option1">
+                                        <label class="form-check-label" for="support">Yes</label>
+                                        <span style="padding-left:20px"></span>
+                                        <input class="form-check-input" type="radio" name="support" id="support" value="option2">
+                                        <label class="form-check-label" for="support">No</label>            
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="row mb-sm-1" style="padding-left: 20px";>
+                            <label for="income" class="col-sm-6 col-form-label col-form-label-sm">Who will have primary responsibility of the dog's care?</label>
+                            <div class="col-sm-6"> 
+                                <select class="list-dt form-control form-control-sm" id="income" aria-label="income">
+                                    <option selected>Select</option>
+                                    <option value="1">Myself</option>
+                                    <option value="2">My husband/wife/partner</option>
+                                    <option value="3">My child/children</option>
+                                    <option value="4">Another family member</option>
+                                    <option value="4">Housekeeper</option>
+                                    <option value="5">Others</option>
+                                    </select>                
+                            </div>
+                        </div>
+                        <div class="row mb-sm-1" style="padding-left: 20px";>
+                            <label for="income" class="col-sm-6 col-form-label col-form-label-sm">Who will have financial responsibility of the dog?</label>
+                            <div class="col-sm-6"> 
+                                <select class="list-dt form-control form-control-sm" id="income" aria-label="income">
+                                    <option selected>Select</option>
+                                    <option value="1">Myself</option>
+                                    <option value="2">My husband/wife/partner</option>
+                                    <option value="4">Another family member</option>
+                                    <option value="5">Others</option>
+                                    </select>                
+                            </div>
+                        </div>
+
+                        <div class="row mb-sm-1"  style="padding-left: 20px">
+                            <div class="col-sm-6 col-md-6 col-form-label col-form-label-sm">How much time per day will you be able to interact with the dog?</div>
+                                <div class="col-sm-6 col-md-6 col-form-label col-form-label-sm">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="playtime" id="alone" value="option1">
+                                        <label class="form-check-label" for="playtime" style="white-space: nowrap">1 Hour</label>
+                                    </div>
+                                    <span style="padding-left: 10px;"></span>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="playtime" id="playtime" value="option2">
+                                        <label class="form-check-label" for="playtime" style="white-space: nowrap">2 Hours</label>
+                                    </div>
+                                    <span style="padding-left: 10px;"></span>
+                                    <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="playtime" id="aloplaytimene" value="option3">
+                                            <label class="form-check-label" for="playtime" style="white-space: nowrap">More than 2 Hrs</label>
+                                    </div> 
+                                </div>
+                        </div>                                 
+                        <div class="row mb-sm-1"  style="padding-left: 20px">
+                            <div class="col-sm-6 col-form-label col-form-label-sm" style="vertical-align:bottom">Will your dog be alone at home?
+                                    <div class="form-check form-check-inline" style="padding-left:20px">
+                                        <input class="form-check-input" type="radio" name="alone" id="alone" value="option1">
+                                        <label class="form-check-label" for="alone">Yes</label>
+                                        <span style="padding-left:20px;"></span>
+                                        <input class="form-check-input" type="radio" name="alone" id="alone" value="option2">
+                                        <label class="form-check-label" for="alone">No</label>            
+                                    </div>
+                                </div>
+                            <div class="col-sm-4 col-form-label col-form-label-sm"> 
+                                <label for="alonetime"> If yes, for how long? </label>
+                                <div class="form-check form-check-inline" style="padding-left:20px">
+                                    <input type="number" class="form-control form-control-xs" aria-label="petcount" style="width:65px;height:25px;margin:0%">                        
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-sm-1" style="padding-left: 20px";>
+                            <label for="income" class="col-sm-8 col-form-label col-form-label-sm">Who will care for your dog when you go out of town, or in case of an emergency?</label>
+                                <div class="col-sm-4"> 
+                                    <input type="text" class="form-control form-control-sm" aria-label="work">
+                                    </div>
+                                </div>              
+
+                        <!-- <div class="row mb-sm-1" style="padding-left: 20px">
+                            <div class="col-sm-6 col-form-label col-form-label-sm">Do you anticipate moving soon? 
+                                    <div class="form-check form-check-inline" style="padding-left:20px">
+                                        <input class="form-check-input" type="radio" name="ph7" id="ph7" value="option1">
+                                        <label class="form-check-label" for="ph7">Yes</label>
+                                        <span style="padding-left:20px;"></span>
+                                        <input class="form-check-input" type="radio" name="ph7" id="ph7" value="option2">
+                                        <label class="form-check-label" for="ph7">No</label>            
+                                    </div>
+                                </div>                           
+                            <div class="col-sm-6 col-form-label col-form-label-sm">If yes, would you take your pets with you?
+                                    <div class="form-check form-check-inline" style="padding-right:20px;padding-left:20px">
+                                        <input class="form-check-input" type="radio" name="ph8" id="ph8" value="option1">
+                                        <label class="form-check-label" for="ph8">Yes</label>
+                                        <span style="padding-left:20px;"></span>
+                                        <input class="form-check-input" type="radio" name="ph8" id="ph8" value="option2">
+                                        <label class="form-check-label" for="ph8">No</label>            
+                                    </div>
+                            </div>
+                        </div>-->
+                    </div>        
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                    <input type="button" name="next" class="next action-button" value="Next Step"/>
+                </fieldset>
+
+                <fieldset>
+                    <div class="form-card">
+                        <h5 style="font-size:16px;font-weight: 700;padding-bottom:10px">4. Consent Agreement</h5>
+                        <table style="padding-left: 20px;margin-right:15px;margin-bottom:10px;padding-top:5px;text-align:left">
+                            <colgroup>
+                                <col span="1" style="width:6%">
+                                <col span="1" style="width:94%">
+                            </colgroup>
+                            <tr>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                    <input class="form-check-input" type="checkbox" value="true" id="agree" style="height:15px;text-align: left;"></input></div>
+                                </td>
+                                <td>
+                                    I acknowledge that by submitting this application, I agree to the screening process required to ensure I am qualified to adopt the dog.<br><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                    <input class="form-check-input" type="checkbox" value="true" id="occular" style="height:15px;text-align: left;"></input></div>
+                                </td>
+                                <td>
+                                    I allow the rescuer/poster to conduct an occular inspection of my residence to ensure the safety of the dog to be adopted.<br><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                    <input class="form-check-input" type="checkbox" value="true" id="fullresp" style="height:15px;text-align: left;"></input></div>
+                                </td>
+                                <td>
+                                    I am committed to taking full responsibility for the dog's health and welfare for the rest of its life, which could be 10 years or more.<br><br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                    <input class="form-check-input" type="checkbox" value="true" id="fees" style="height:15px;text-align: left;"></input></div>
+                                </td>
+                                <td>
+                                    I fully understand and agree to pay the Adoption Fees to the rescuer/poster upon custody transfer of the dog.  <br><br>
+                            </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="custom-control custom-checkbox">
+                                    <input class="form-check-input" type="checkbox" value="true" id="rights" style="height:15px;text-align: left;"></input></div>
+                                </td>
+                                <td>
+                                I consent to visiting rights of rescuer/poster should this application result to an adoption, to ensure the terms of the adoption agreement are being
+                                    followed. 
+                                        </td>
+                            </tr>
+                        </table>
+                        </div>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Previous"/>
+                    <input type="button" name="make_payment" class="next action-button" value="Confirm"/>
+                </fieldset>
+                <fieldset>
+                    <div class="form-card">
+                        <h5 class="fs-title text-center" style="padding-top:5px">You have successfully submitted an application!</h5>
+                        <div class="row justify-content-center">
+                            <div class="col-sm-6 col-md-4">
+                                <img src="images/submitsucces.gif" class="fit-image">
+                            </div>
+                        </div>
+                        <div class="row justify-content-center">
+                            <div class="col-sm-12 col-md-9 text-center">
+                                <p>The rescuer/poster of the dog for adoption will get in touch with you to schedule a screening interview. <br>We wish you a fur-fect match, good luck! </p>
+                                <a type="button" class="btn btn-primary" href="dogdetail2.html" style="color:#fff">CLOSE</a>    
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+        
+        var current_fs, next_fs, previous_fs; //fieldsets
+        var opacity;
+        
+        $(".next").click(function(){
+            
+            current_fs = $(this).parent();
+            next_fs = $(this).parent().next();
+            
+            //Add Class Active
+            $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+            
+            //show the next fieldset
+            next_fs.show(); 
+            //hide the current fieldset with style
+            current_fs.animate({opacity: 0}, {
+                step: function(now) {
+                    // for making fielset appear animation
+                    opacity = 1 - now;
+        
+                    current_fs.css({
+                        'display': 'none',
+                        'position': 'relative'
+                    });
+                    next_fs.css({'opacity': opacity});
+                }, 
+                duration: 600
+            });
+        });
+        
+        $(".previous").click(function(){
+            
+            current_fs = $(this).parent();
+            previous_fs = $(this).parent().prev();
+            
+            //Remove class active
+            $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+            
+            //show the previous fieldset
+            previous_fs.show();
+        
+            //hide the current fieldset with style
+            current_fs.animate({opacity: 0}, {
+                step: function(now) {
+                    // for making fielset appear animation
+                    opacity = 1 - now;
+        
+                    current_fs.css({
+                        'display': 'none',
+                        'position': 'relative'
+                    });
+                    previous_fs.css({'opacity': opacity});
+                }, 
+                duration: 600
+            });
+        });
+        
+        $('.radio-group .radio').click(function(){
+            $(this).parent().find('.radio').removeClass('selected');
+            $(this).addClass('selected');
+        });
+        
+        $(".submit").click(function(){
+            return false;
+        })
+            
+        });
+    </script>
+    <div class="col-lg-4 col-sm-12" style="padding-left:10px;padding-right:10px">
+        <div class="border" style="border-radius:20px;padding:20px;background-color: rgb(247, 247, 247); border-style:solid; border-width: 3px; border-color: #581542; width:100%">
+            <h6 style="text-align:center"><strong>DOG FOR ADOPTION</strong><br><br></h6>
+                <div class="row">
+                    <div class="col col-sm-2 col-lg-4" style="margin-left:5px;margin-right:5px">
+                        <img src="images/searchres/fem8.jpg" alt="dog" style="width:120px;display:block;padding-bottom: 5px;"/>    
+                    </div>
+                    <div class="col col-lg-7" style="text-align:left">
+                        <h6>Female, 3 mo. old<br>
+                            <h6 style="font-size:14px"><i class="fa-solid fa-paw" style="font-size:medium;color:#811D60"></i><span style="color:#5d5d5d;"> Aspin - Spitz - Shih Tzu</span></h6>
+                            <i class="fa-solid fa-timer" style="font-size:medium;color:#811D60"></i><span style="font-size: small;color: #5d5d5d">Posted 10d ago</span><br></h6>  
+                    </div>
+                    </div>
+            <div class="row">
+                <table style="width:100%;color:#581542;margin-top:10px; margin-left:15px; margin-right:15px;">
+                    <colgroup>
+                        <col span="1" style="width:50%">
+                        <col span="1" style="width:50%">
+                    </colgroup>
+                        <tr style="border-bottom:0.3pt solid #e1e1e1;">
+                        <td colspan="2" style="padding-left:0px;font-size:15px"><i>About the dog</i></th>    
+                        </tr>         
+                        <tr>
+                        <th>Foster Name:</th>
+                        <td>Mika</td>
+                        </tr>
+                        <tr>
+                        <th>Location:</th>
+                        <td>Pandi, Bulacan</td>
+                        </tr>
+                        <tr>
+                        <th>Date born/rescued:</th>
+                        <td>21 May 2022</td>
+                        </tr>
+                        <tr>
+                        <th>Breed of Sire:</th>
+                        <td>Labrador - GSD</td>
+                        </tr>
+                        <tr>
+                        <th>Breed of Dam:</th>
+                        <td>Aspin</td>
+                        </tr>
+                        <tr>
+                        <th>Rescued Dog:</th>
+                        <td>No</td>
+                        </tr>
+                        <tr style="border-bottom:0.3pt solid #e1e1e1;">
+                        <td colspan="2" style="padding-top:20px;padding-left:0px;font-size:15px"><i>Medical History</th>          
+                        </tr>  
+                        <tr>
+                        <th>Vaccinated?</th>
+                        <td>Yes</td>
+                        </tr>
+                        <tr>
+                        <th>Anti-rabies?</th>
+                        <td>Yes</td>
+                        </tr>
+                        <tr>
+                        <th>Neutered/Spayed?</th>
+                        <td>No</td>
+                        </tr>
+                        <tr>
+                        <th>Medical issue/s:</th>
+                        <td>None</td>
+                        </tr>
+                        <tr>
+                        <th>Behavior:</th>
+                        <td>Playful</td>
+                        </tr>
+                        <tr>
+                        <th>Reason for posting:  </th>
+                        <td>Dam and sire (rescued dogs) are still unneutered</td>
+                        </tr>
+                        <tr>
+                            <th>Poster:  </th>
+                            <td>@chefarnold </td>
+                        </tr>
+                </table>
+                </div>
+    </div>  
+    </div>
+    </div>
+</div>
+
+  <footer class="site-footer">    
+    <div class="container-fluid px-5">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+       <a href="aboutus.html" style="color:#fff">Furlinks</a>.
+          </p>
+        </div>
+  
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="telegram" href="#"><i class="fa-brands fa-telegram"></i></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="discord" href="#"><i class="fa-brands fa-discord"></i></i></a></li>   
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer> 
+</body>
+</html>

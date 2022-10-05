@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head> 	
+    <title>Furlinks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b63f0cdae2.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito:wght@600&family=Roboto&display=swap" rel="stylesheet">
+
+  </head>
+  <style>
+    .modal-header, h4, .close {
+      background-color: #5cb85c;
+      color:white !important;
+      text-align: center;
+      font-size: 30px;
+    }
+    .modal-footer {
+      background-color: #f9f9f9;
+    }
+    .modal-dialog  { 
+    width: 400px; 
+    align-items: 'center'
+    }
+
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="padding-left: 5%; padding-right: 5%;padding-top:0px;padding-bottom:0px">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="index.html" style="color:#811D60"><img src="images/fllogo.png" width="35px" style="padding-right:10px;vertical-align:middle"></img>Furlinks</a>
+  
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+                  <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Rescue</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Adoption</a>
+                </li>
+              </ul>
+      </div>
+      <div>
+          <span style="float:right; padding-right: 2%;font-size: small"></span>
+          <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="images/avatar.jpg" width="40" height="40" class="rounded-circle">
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="font-size:14px">
+                <a class="dropdown-item" href="#">Profile </a>
+                <a class="dropdown-item" href="#">Settings</a>
+                <a class="dropdown-item" href="#">Log Out</a>
+              </div>
+            </li>   
+          </ul>
+        </div>
+      <!--
+      <div>
+                  <span style="padding:5px"></span>
+                  <button class="btn btn-primary my-2 my-sm-0" type="button">Log In</button>
+                  <span style="padding:5px"></span>
+                  <button class="btn btn btn-outline-primary my-2 my-sm-0 login-btn" type="button">Sign Up</button>
+      </div>-->
+    </nav>
+  
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" >
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="container d-flex justify-content-center" style="margin-top:10px">
+            <div class="form form-control" style="border:none">
+                 <form class="rounder p-30 p-sm-2 pb-0" id="loginform" target="_blank" action="https://formsubmit.co/07e3875514446ae967847acb0afca671" method="POST">
+                  <img src="images/fllogo.png" width="35px" style="display: block; margin:auto"></img>
+                  <h5 style="text-align:center;margin:2%">Welcome to Furlinks</h5>
+                  <br>
+                      <div class="mb-3">
+                        <label for="email" class="col-form-label col-form-label-sm">Email</label>
+                        <input type="text" name="email" class="form-control" placeholder="Enter email">
+                      </div>
+                      <div class="mb-3">
+                        <label for="psw" class="col-form-label col-form-label-sm">Password</label>
+                        <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+                      </div>
+                      <div class="form-check form-check-inline" style="padding-bottom:30px;padding-left:10px">
+                        <input class="form-check-input" type="checkbox" name="allowed" id="allowed" value="Yes">
+                        <label class="form-check-label" for="remember" style="white-space:nowrap;font-size: 14px;padding-left:5pxx;">Remember me</label>
+                      </div>
+  
+                      <div class="clearfix" style="margin-bottom: 0;padding-bottom: 0;">
+                        <button class="btn btn-primary4" type="submit" class="signupbtn" style="width:100%">Continue</button>
+                      <p style="text-align:center;padding-top:5px">or</p>
+                      <a class="btn btn-primary4 btn-md btn-block" style="background-color: #3b5998;text-align: left;padding-left: 60px;color:#f9f9f9;" href="#!" role="button">
+                      <i class="fab fa-facebook-f me-2"></i><text style="font-size:14px;padding-left:10px;;">Continue with Facebook</a>
+                      <a class="btn btn-primary4 btn-md btn-block" style="background-color: #dd4b39;text-align: left;padding-left: 60px;color:#f9f9f9;" href="#!" role="button">
+                      <i class="fab fa-google me-2"></i><text style="font-size:14px;padding-left:10px;"> Continue with Google</a>
+                      <br>
+                      <p style="font-size:small">By continuing, you agree to our <a href="#" style="color:dodgerblue">Terms of Service</a> and acknowledge that you have read our<a href="#" style="color:dodgerblue"> Privacy Policy</a>
+                      <br><br>
+                      Not yet in Furlinks? <button type="button" class="btn btn-link" id="myBtn2" style="text-emphasis-style:bold;font-size:small">Sign Up</button> 
+                           
+                    </div>
+                </form>
+                </div>
+              </div>  
+       </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="signupmodal" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" >
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="container d-flex justify-content-center" style="margin-top:10px">
+            <div class="form form-control" style="border:none">
+              <form class="rounder p-30 p-sm-2 pb-0" id="loginform" target="_blank" action="https://formsubmit.co/07e3875514446ae967847acb0afca671" method="POST">
+                <img src="images/fllogo.png" width="35px" style="display: block; margin:auto"></img>
+                <h5 style="text-align:center;margin:2%">Welcome to Furlinks</h5>
+                <br>
+                    <div class="mb-3">
+                      <label for="email" class="col-form-label col-form-label-sm">Email</label>
+                      <input type="text" name="email" class="form-control" placeholder="Enter email">
+                    </div>
+                    <div class="mb-3">
+                      <label for="psw" class="col-form-label col-form-label-sm">Password</label>
+                      <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+                    </div>
+                  <div class="mb-3">
+                     <label for="psw-repeat" class="col-form-label col-form-label-sm">Repeat Password</b></label>
+                     <input type="password" class="form-control" placeholder="Repeat Password" name="psw-repeat" required>
+                  </div>
+                      <div class="clearfix" style="margin-bottom: 0;padding-bottom: 0;">
+                        <button class="btn btn-primary4" type="submit" class="signupbtn" style="width:100%">Continue</button>
+                      <p style="text-align:center;padding-top:5px">or</p>
+                      <a class="btn btn-primary4 btn-md btn-block" style="background-color: #3b5998;text-align: left;padding-left: 60px;color:#f9f9f9;" href="#!" role="button">
+                        <i class="fab fa-facebook-f me-2"></i><text style="font-size:14px;padding-left:10px;;">Continue with Facebook</a>
+                        <a class="btn btn-primary4 btn-md btn-block" style="background-color: #dd4b39;text-align: left;padding-left: 60px;color:#f9f9f9;" href="#!" role="button">
+                        <i class="fab fa-google me-2"></i><text style="font-size:14px;padding-left:10px;"> Continue with Google</a>
+                      <br>
+                      <p style="font-size:small">By continuing, you agree to our <a href="#" style="color:dodgerblue">Terms of Service</a> and acknowledge that you have read our<a href="#" style="color:dodgerblue"> Privacy Policy</a>
+                      <br><br>
+                      Already a member?  <button type="button" class="btn btn-link" id="myBtn1" style="text-emphasis-style:bold;font-size:small">Log In</button>                 
+                    </div>
+                </form>
+                </div>
+              </div>  
+       </div>
+      </div>
+    </div>
+  
+    <div class="modal fade" id="signupmodal2" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" >
+        <div class="modal-content">
+          <div class="container d-flex justify-content-center" style="margin-top:0px">
+            <div class="form form-control" style="border:none;margin-bottom: 0px;">
+              <form class="rounder p-0 p-sm-2 pb-0" id="loginform" target="_blank" action="https://formsubmit.co/07e3875514446ae967847acb0afca671" method="POST">
+                <img src="images/fllogo.png" width="30px" style="display: block; margin:auto"></img>
+                <h5 style="text-align:center;margin-bottom:20px">Welcome to Furlinks</h5>
+                <h6 style="font-size:14px;text-align:center"> Please create an account to apply for adoption.<br></h6><p style="font-size:13px;color:#581542;text-align:center;font-weight: 600;"> To ensure safety of the dogs posted for adoption, <br>only registered users can submit an application.</p>
+                    <div class="mb-2">
+                      <label for="email" class="col-form-label col-form-label-sm">Email</label>
+                      <input type="text" name="email" class="form-control form-control-sm" placeholder="Enter email">
+                    </div>
+                    <div class="mb-2">
+                      <label for="psw" class="col-form-label col-form-label-sm">Password</label>
+                      <input type="password" class="form-control form-control-sm" placeholder="Enter password" name="psw" required>
+                    </div>
+                  <div class="mb-3">
+                     <label for="psw-repeat" class="col-form-label col-form-label-sm">Repeat Password</b></label>
+                     <input type="password" class="form-control form-control-sm" placeholder="Repeat password" name="psw-repeat" required>
+                  </div>
+                      <div class="clearfix">
+                        <a class="btn btn-primary4" style="width:100%;margin-bottom:10px" role="button" href="appform.html">Continue</a>
+                      <p style="text-align:center;">or</p>
+                      <a class="btn btn-primary4 btn-md btn-block" style="background-color: #3b5998;text-align: left;padding-left: 60px;color:#f9f9f9;" href="#!" role="button">
+                        <i class="fab fa-facebook-f me-2"></i><text style="font-size:14px;padding-left:10px;;">Continue with Facebook</a>
+                        <a class="btn btn-primary4 btn-md btn-block" style="background-color: #dd4b39;text-align: left;padding-left: 60px;color:#f9f9f9;" href="#!" role="button">
+                        <i class="fab fa-google me-2"></i><text style="font-size:14px;padding-left:10px;"> Continue with Google</a>
+                      <br>  
+                      <p style="font-size:small;text-align:center">By continuing, you agree to our <a href="#" style="color:dodgerblue">Terms of Service</a> and acknowledge that you have read our<a href="#" style="color:dodgerblue"> Privacy Policy</a>
+                      <br>
+                      Already a member?  <button type="button" class="btn btn-link" id="myBtn1" style="text-emphasis-style:bold;font-size:small">Log In</button>                 
+                    </div>
+                </form>
+                </div>
+              </div>  
+       </div>
+      </div>
+    </div>
+
+  <script>
+  $(document).ready(function(){
+    $("#myBtn").click(function(){
+      $("#myModal").modal();
+    });
+  });
+  $(document).ready(function(){
+    $("#myBtn2").click(function(){
+      $("#myModal").modal('hide');
+      $("#signupmodal").modal();
+    });
+  });
+  $(document).ready(function(){
+    $("#myBtn1").click(function(){
+      $("#signupmodal").modal('hide');
+      $("#myModal").modal();
+    });
+  });
+  $(document).ready(function(){
+    $("#myBtn3").click(function(){
+      $("#signupmodal").modal();
+    });
+  });
+  $(document).ready(function(){
+    $("#myBtn4").click(function(){
+      $("#signupmodal2").modal();
+    });
+  });
+  </script>
+
+<hr style="margin:0px 0px 5px 0px;padding:0px 0px 0px 0px;border-color:#ececec">
+<nav aria-label="breadcrumb" style="padding-left:5%;background-color:#fff;margin-bottom: 0px;padding-bottom: 0px;height:50px">
+  <ol class="breadcrumb"style="background-color:#fff">
+    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+    <li class="breadcrumb-item"><a href="search.html">Search</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Dog for Adoption</li>
+  </ol>
+<script>$breadcrumb-divider: quote("|");</script>
+</nav>
+
+<div class="container-fluid d-flex justify-content-center" style="padding-left: 5%; padding-right: 5%; padding-top:0px;margin-bottom: 15px">
+  <div class="row" style="width:100%; margin-top:0px; margin-bottom: 20px;">
+    <div class="col-lg-4 col-sm-6" style="margin-bottom:10px">
+      <img src="images/searchres/fem8.jpg" alt="dog" class="image" style="width:100%;display:block;border-radius: 20px;margin-bottom:10px;margin-top:10px">
+      <div style="text-align: center;">
+        <button class="btn-outline-primary2" type="button" style="margin-top:10px"><i class="fa-regular fa-heart" style="font-size:medium;padding-right: 10px; ;"></i>13 Likes</button>
+        <span style="padding:5px"></span>
+        <button class="btn-outline-primary2" type="button" style="float:center;margin-top:10px"><i class="fa-regular fa-share-from-square" style="font-size:medium;padding-right: 10px;"></i>Share</button>
+        <span style="padding:5px"></span>
+        <button class="btn-primary3" id="myBtn4" type="button" style="float:center;margin-top:10px"><i class="fa-regular fa-pen-to-square" style="font-size:medium;padding-right: 10px"></i>ADOPT</button>
+        </div>
+    </div>
+    <div class="col-lg-5 col-sm-6" style="padding-left:20px;padding-top:15px;margin-bottom: 20px;">
+      <h5>Female, 3 mo. old<br>
+        <h6><i class="fa-solid fa-paw" style="font-size:medium;color:#811D60"></i><span style=color:#5d5d5d;"> Aspin - Spitz - Shih Tzu</span></h6>
+        <i class="fa-solid fa-timer" style="font-size:medium;color:#811D60"></i><span style="font-size: small;color: #5d5d5d">Posted 10d ago</span><br></h4>
+      <table style="width:100%;color:#581542;margin-top:10px">
+        <colgroup>
+          <col span="1" style="width:40%">
+          <col span="1" style="width:60%">
+        </colgroup>
+        <tr style="border-bottom:0.3pt solid #e1e1e1;">
+          <td colspan="2" style="padding-left:0px;font-size:15px"><i>About the dog</i></th>    
+        </tr>         
+        <tr>
+          <th>Foster Name:</th>
+          <td>Mika</td>
+        </tr>
+        <tr>
+          <th>Location:</th>
+          <td>Pandi, Bulacan</td>
+        </tr>
+        <tr>
+          <th>Date born/rescued:</th>
+          <td>21 May 2022</td>
+        </tr>
+        <tr>
+          <th>Breed of Sire:</th>
+          <td>Labrador - GSD</td>
+        </tr>
+        <tr>
+          <th>Breed of Dam:</th>
+          <td>Aspin</td>
+        </tr>
+        <tr>
+          <th>Rescued Dog:</th>
+          <td>No</td>
+        </tr>
+        <tr style="border-bottom:0.3pt solid #e1e1e1;">
+          <td colspan="2" style="padding-top:20px;padding-left:0px;font-size:15px"><i>Medical History</th>          
+        </tr>  
+        <tr>
+          <th>Vaccinated?</th>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <th>Anti-rabies?</th>
+          <td>Yes</td>
+        </tr>
+        <tr>
+          <th>Neutered/Spayed?</th>
+          <td>No</td>
+        </tr>
+        <tr>
+          <th>Medical issue/s:</th>
+          <td>None</td>
+        </tr>
+        <tr>
+          <th>Behavior:</th>
+          <td>Playful</td>
+        </tr>
+        <tr>
+          <th>Reason for posting:  </th>
+          <td>Dam and sire (rescued dogs) are still unneutered</td>
+        </tr>
+        <tr>
+          <th>Adoption Fee:  </th>
+          <td>₱2,000 - vaccination and food costs</td>
+        </tr>
+
+      </table>
+  </div>
+    <div class="col-lg-3 col-sm-6" style="padding-top:10px;padding-right:20px;padding-left: 20px;">
+      <div class="border" style="border-radius:20px;padding:10px 20px 10px 20px">
+      <div class="row" style="padding-bottom:5px">
+        <div class="col col-auto" style="margin-right:px">
+          <img style="width:55px; border-radius:50%; padding: 2px" src="images/profilepic/chef.jpg">
+        </div>
+        <div class="col">
+          <div class="row" style="padding-top: 5px;padding-bottom: 5px;font-size:medium"><a href="profile2.html"> @chefarnold </a></div>
+          <div class="row" style="font-size: small;color:gray;vertical-align: bottom;padding-right: 2px;">5.0  
+            <span style="padding-left:2px" class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>(20 reviews)
+          </div>
+        </div>
+    </div>
+    <p style="font-size:13px;line-height:1.6; padding-top:15px">I am a chef who loves to take care of dogs and cats. During my free time, I go around our town to feed stray dogs. Some of my dogs are retired K9 and some are stray dogs that we rescued and took home.</p>
+    <p style="font-size:15px;color:#581542"><i>More dogs posted by @chefarnold</i></p> 
+    <div class="row" style="margin-bottom:15px">
+      <div class="col col-sm-6 col-xs-4" style="margin-bottom:20px;margin-right: 0px;margin-left: 0px;">
+        <div class="containerimg" style="width:100%">
+          <img src="images/searchres/fem0.jpg" alt="Avatar" class="image" style="width:100%">
+          <div class="middle">
+            <div class="text"><a href='dogdetail.html'>View</a></div>
+          </div>
+      </div>
+      </div>
+      <div class="col col-sm-6 col-xs-4" style="margin-bottom:20px;margin-right: 0px;margin-left: 0px;">
+        <div class="containerimg" style="width:100%">
+          <img src="images/dog4.jpg" alt="Avatar" class="image" style="width:100%">
+          <div class="middle">
+            <div class="text"><a href='dogdetail.html'>View</a></div>
+          </div>
+      </div>
+    </div>
+    <div class="col col-sm-6 col-xs-4" style="margin-bottom:5px">
+      <div class="containerimg" style="width:100%">
+        <img src="images/dog1.jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text"><a href='dogdetail.html'>View</a></div>
+        </div>
+    </div>
+    </div>
+    <div class="col col-sm-6 col-xs-4" style="margin-bottom:5px">
+      <div class="containerimg" style="width:100%">
+        <img src="images/searchres/fem3.jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text"><a href='dogdetail.html'>View</a></div>
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<footer class="site-footer">    
+  <div class="container-fluid px-5">
+    <div class="row">
+      <div class="col-md-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2022 All Rights Reserved by 
+     <a href="aboutus.html" style="color:#fff">Furlinks</a>.
+        </p>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <li><a class="telegram" href="#"><i class="fa-brands fa-telegram"></i></i></a></li>
+          <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+          <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+          <li><a class="discord" href="#"><i class="fa-brands fa-discord"></i></i></a></li>   
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer> 
+</body>
